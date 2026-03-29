@@ -6,7 +6,7 @@ export const InputForm = () => {
         <form>
             <input type="text" />
             <button>
-                
+                <i class="fa-solid fa-plus"></i>
             </button>
         </form>
 
