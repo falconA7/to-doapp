@@ -1,10 +1,28 @@
 import React from 'react'
+import {useState} from 'react'
 
-export const InputForm = () => {
+export const InputForm = ({taskList,setTaskList}) => {
+
+    const [inputText, setInputText] = useState("")
+    
+    const handleSubmit= (e)=>{
+       e.preventDefault();
+       /*タスクを追加する*/
+       setTaskList([
+        ...taskList,
+        {
+            text: inputText
+        }
+       ])
+    }
+
+    const handleChange= (e) =>{
+        setInputText(e.target.value);
+    }
   return (
     <div className="inputForm">
-        <form>
-            <input type="text" />
+        <form onSubmit={handleSubmit}>
+            <input type="text" onChange={handleChange} />
             <button>
                 <i class="fa-solid fa-plus"></i>
             </button>
