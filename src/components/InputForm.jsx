@@ -11,7 +11,9 @@ export const InputForm = ({taskList,setTaskList}) => {
        setTaskList([
         ...taskList,
         {
-            text: inputText
+            id:taskList.length,
+            text: inputText,
+            completed: false
         }
        ]);
        /*タスクを消す*/
@@ -25,7 +27,7 @@ export const InputForm = ({taskList,setTaskList}) => {
   return (
     <div className="inputForm">
         <form onSubmit={handleSubmit}>
-            <input type="text" onChange={handleChange} />
+            <input type="text" onChange={handleChange} value={inputText} />
             <button>
                 <i class="fa-solid fa-plus"></i>
             </button>
