@@ -5,6 +5,7 @@ export const InputForm = ({taskList,setTaskList}) => {
 
     const [inputText, setInputText] = useState("")
     
+
     const handleSubmit= (e)=>{
        e.preventDefault();
        /*タスクを追加する*/
@@ -13,9 +14,12 @@ export const InputForm = ({taskList,setTaskList}) => {
         {
             text: inputText
         }
-       ])
+       ]);
+       /*タスクを消す*/
+       setInputText("")
     }
 
+    /*submitボタン*/ 
     const handleChange= (e) =>{
         setInputText(e.target.value);
     }
